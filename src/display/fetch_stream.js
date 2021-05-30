@@ -232,6 +232,7 @@ class PDFFetchStreamRangeReader {
     }
 
     this._headers = createHeaders(this._stream.httpHeaders);
+    this._headers.append("cache-control", "no-cache");
     this._headers.append("Range", `bytes=${begin}-${end - 1}`);
 
     const url = source.url;
