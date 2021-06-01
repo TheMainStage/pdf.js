@@ -232,7 +232,7 @@ class PDFFetchStreamRangeReader {
     }
 
     this._headers = createHeaders(this._stream.httpHeaders);
-    this._headers.append("cache-control", "no-store");
+    this._headers.append("if-modified-since", "Thu, 5 Apr 2046 07:28:00 GMT")
     this._headers.append("Range", `bytes=${begin}-${end - 1}`);
 
     const url = source.url;
